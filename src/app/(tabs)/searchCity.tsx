@@ -1,4 +1,4 @@
-import { View, TextInput, StyleSheet, Pressable} from "react-native";
+import { View, TextInput, StyleSheet, Pressable, Text} from "react-native";
 import Feather from "@expo/vector-icons/Feather";
 import { useState, useContext } from "react";
 import { getData } from "../../api/current";
@@ -18,22 +18,36 @@ const SearchCity = () => {
     const { setCurrentCity, addFavorite } = useContext(WeatherContext);
     const [loading, setLoading] = useState(false);
     const router = useRouter();
+    const [error, setError] = useState<string | null>(null);
 
 
     const handleSearch = async () => {
         if (!search) return;
         setLoading(true);
+        setError(null);
         try{
             const data = await getData(search);
             setCurrentWeather(data);
         } catch(error){
             console.log("Error fetching weather:", error)
+            setError("Kunde inte hämta väderdata, prova igen senare.")
         }finally{
             setLoading(false);
         }
     }
 
     if (loading) return <Spinner/>
+
+    if(error) {
+        return (
+            <Background>
+                <Text style={{ color: "white", textAlign: "center", marginTop: 150, fontSize: 20 }}>
+                    {error}
+                </Text>
+            </Background>
+        )
+    }
+
     return(
         <Background>
             <Header text={"Search cities"}/>

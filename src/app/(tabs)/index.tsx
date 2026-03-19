@@ -16,17 +16,21 @@ const Homepage = () => {
     const [weatherData, setWeatherData] = useState<ForecastData | null>(null);
     const { currentCity} = useContext(WeatherContext);
     const [loading, setLoading] = useState(false);
+    const [error, setError] = useState<string | null>(null);
 
 
     useEffect(() => {
         const loadWeather = async () => {
             setLoading(true);
+            setError(null);
+
             try{
                 const data = await getData(currentCity);
             setWeatherData(data);
 
             }catch(error){
                 console.log("Error fetching weather data:", error)
+                setError("Kunde inte hämta väderdata, prova igen senare.")
             }finally{
                 setLoading(false);
             }
@@ -35,6 +39,16 @@ const Homepage = () => {
 }, [currentCity]);
 
     if (loading) return <Spinner/>
+
+    if(error) {
+        return (
+            <Background>
+                <Text style={{ color: "white", textAlign: "center", marginTop: 150, fontSize: 20 }}>
+                    {error}
+                </Text>
+            </Background>
+        )
+    }
 
 
     return(

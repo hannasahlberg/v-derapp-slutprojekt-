@@ -5,7 +5,7 @@ const Background = ({ children }: {children: React.ReactNode}) => {
     return(
         <ImageBackground
                     style={styles.background}
-                    source={require('../assets/blue_background_design-wallpaper-3840x2160.jpg')}
+                    source={require('../../assets/blue_background_design-wallpaper-3840x2160.jpg')}
                     resizeMode="cover"
         >
             <View style={styles.container}>
