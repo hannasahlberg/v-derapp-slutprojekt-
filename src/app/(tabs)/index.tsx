@@ -1,13 +1,13 @@
-import { getData } from "../../api/forecast";
+import { getData } from "../../../api/forecast";
 import { View, Text, StyleSheet, Image} from "react-native";
-import { ForecastData } from "../../types/forecast";
+import { ForecastData } from "../../../types/forecast";
 import { useEffect, useState, useContext } from "react";
-import { WeatherContext } from "../../Context/weatherContext";
-import BlurContainer from "../../Componens/BlurContainer";
-import Spinner from "../../Componens/Spinner";
-import Background from "../../Componens/Background";
-import Header from "../../Componens/Header";
-import WeatherCard from "../../Componens/WeatherCard";
+import { WeatherContext } from "../../../Context/weatherContext";
+import BlurContainer from "../../../Componens/BlurContainer";
+import Spinner from "../../../Componens/Spinner";
+import Background from "../../../Componens/Background";
+import Header from "../../../Componens/Header";
+import WeatherCard from "../../../Componens/WeatherCard";
 
 
 
@@ -55,7 +55,7 @@ const Homepage = () => {
                 
             </View>
 
-            <BlurContainer style={{ marginBottom: 150, height: 200, marginTop: 60, margin: 10,}}>    
+            <BlurContainer style={{ marginBottom: 110, height: 200, marginTop: 60, margin: 10,}}>    
                 <View style={styles.titleRow}>
                 <Text style={{color: "black", fontSize: 30}}>Today</Text>
                 {weatherData && (
@@ -72,7 +72,6 @@ const Homepage = () => {
             .slice(0,5)
             .map((item) => {
                 const time = item.dt_txt?.split(" ")[1].slice(0, 5); 
-
                 return(
                     <WeatherCard
                     key={item.dt}

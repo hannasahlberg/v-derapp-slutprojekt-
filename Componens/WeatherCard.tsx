@@ -82,8 +82,14 @@ const styles = StyleSheet.create({
     marginBottom: 20,
 
   },
-  cityText: { fontSize: 24, color: "white" },
-  tempDescText: { fontSize: 18, color: "white" },
+  cityText: { 
+    fontSize: 24, 
+    color: "white" 
+  },
+  tempDescText: { 
+    fontSize: 18, 
+    color: "white" 
+  },
 
   favButton: {
     marginTop: 15,

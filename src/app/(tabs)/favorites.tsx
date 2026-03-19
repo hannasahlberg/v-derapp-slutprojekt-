@@ -1,24 +1,25 @@
-import { View, Text, FlatList } from "react-native"
+import { View, FlatList} from "react-native"
+import { WeatherContext } from "../../../Context/weatherContext";
 import { useContext } from "react";
 import { useRouter } from "expo-router";
-import Background from "../Componens/Background";
-import WeatherCard from "../Componens/WeatherCard";
-import { WeatherContext } from "../Context/weatherContext";
+import Background from "../../../Componens/Background";
+import WeatherCard from "../../../Componens/WeatherCard";
+import Header from "../../../Componens/Header";
 
 const favorites = () => {
 
-    const {favoriteCities, setCurrentCity} = useContext(WeatherContext);
+    const { favoriteCities, setCurrentCity} = useContext(WeatherContext);
     const router = useRouter();
 
     return(
         <Background>
-        <Text style={{fontSize: 40, color: "white"}}> Favoriter </Text>
+        <Header text="Favorites"/>
         <View style={{justifyContent: "center"}}>
         <FlatList
         data={favoriteCities}
         keyExtractor={(item) => item.name}
         renderItem={({ item }) => (
-          <WeatherCard
+          <WeatherCard 
             city={item.name}
             country={item.country}
             temp={item.temp}
@@ -39,4 +40,3 @@ const favorites = () => {
 }
 
 export default favorites;
-
