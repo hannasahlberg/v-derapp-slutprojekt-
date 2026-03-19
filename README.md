@@ -1,5 +1,5 @@
 # Väderapp
-En mobilapp byggd med React Native som hjälper användare att hålla koll på sina uppgifter och scheman.
+En mobilapp byggd med React Native som visar väder.
 
 <img width="603" height="1311" alt="IMG_0825" src="https://github.com/user-attachments/assets/7d11a792-4b08-489c-89f5-0ca7df115619" />
 <img width="603" height="1311" alt="IMG_0826" src="https://github.com/user-attachments/assets/f168fb38-f014-45e2-9271-72d43f73f731" />
