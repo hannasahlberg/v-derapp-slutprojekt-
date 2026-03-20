@@ -23,16 +23,16 @@ Klona repot:
 Bash
 git clone https://github.com/ditt-användarnamn/weatherapp.git
 
-Gå in i mappen
+Gå in i mappen: 
 cd slutprojekt
 
-Installera beroenden
+Installera beroenden: 
 npm install
 eller 
 npx expo install
 
 Skapa en .env fil med din API-nyckel från openweathermap
 
-Starta projektet
+Starta projektet: 
 Bash 
 npx expo start
