@@ -14,4 +14,25 @@ En mobilapp byggd med React Native som visar väder för valfria städer.
 - React Native
 - Expo
 - TypeScript
+- Api från openweathermap
 
+
+## Installation
+
+Klona repot: 
+Bash
+git clone https://github.com/ditt-användarnamn/v-derapp-slutprojekt-.git
+
+Gå in i mappen
+cd v-derapp-slutprojekt-
+
+Installera beroenden
+npm install
+eller 
+npx expo install
+
+Skapa en .env fil med din API-nyckel från openweathermap
+
+Starta projektet
+Bash 
+npx expo start
