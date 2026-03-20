@@ -21,10 +21,10 @@ En mobilapp byggd med React Native som visar väder för valfria städer.
 
 Klona repot: 
 Bash
-git clone https://github.com/ditt-användarnamn/v-derapp-slutprojekt-.git
+git clone https://github.com/ditt-användarnamn/weatherapp.git
 
 Gå in i mappen
-cd v-derapp-slutprojekt-
+cd slutprojekt
 
 Installera beroenden
 npm install
